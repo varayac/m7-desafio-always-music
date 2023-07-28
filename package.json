@@ -1,0 +1,20 @@
+{
+	"name": "m7-desafio-always-music",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "./node_modules/.bin/nodemon --ignore '*.json'",
+		"dev-win": "node_modules\\.bin\\nodemon.cmd --ignore '*.json'"
+	},
+	"keywords": [],
+	"author": "grupo-1",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2",
+		"pg": "^8.11.1"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
+}
