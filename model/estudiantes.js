@@ -8,7 +8,7 @@ const getStudents = async () => {
 	try {
 		const client = await pool.connect();
 		const estudiantes = await client.query(query);
-		if (estudiantes.rows.length === []) throw new Error('La base de datos no tiene registros');
+		if (estudiantes.rows.length === 0) throw new Error('La base de datos no tiene registros');
 		client.release();
 		return estudiantes.rows;
 	} catch (error) {
@@ -106,6 +106,7 @@ const deleteStudent = async (rut) => {
 	const query = {
 		text: 'DELETE FROM estudiante WHERE rut=$1 RETURNING *',
 		values: [rut],
+		rowMode: 'array', // convierte la salida en array
 	};
 	try {
 		const client = await pool.connect();
